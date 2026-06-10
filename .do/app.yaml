@@ -1,0 +1,25 @@
+# DigitalOcean App Platform spec for the Pala marketing website.
+# Reproducible deploy: `doctl apps create --spec .do/app.yaml`
+# (or just connect the repo in the App Platform UI — these settings map 1:1).
+name: pala-website
+region: ams
+static_sites:
+  - name: pala
+    github:
+      repo: jarvisbot19/pala-website   # <-- change if you use a moobytes org
+      branch: main
+      deploy_on_push: true
+    # No build step — plain static HTML served from the repo root.
+    source_dir: /
+    output_dir: /
+    index_document: index.html
+    # Real 404s (so unknown URLs return 404, not a soft-200 — good for SEO).
+    error_document: 404.html
+
+# Custom domain. You must add the DNS records DO shows you at your registrar
+# (OVH). DO auto-provisions a free Let's Encrypt certificate once DNS resolves.
+domains:
+  - domain: playpala.app
+    type: PRIMARY
+  - domain: www.playpala.app
+    type: ALIAS

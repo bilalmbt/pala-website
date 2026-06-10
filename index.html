@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Pala — Padel Scorekeeper for Apple Watch & iPhone</title>
+<meta name="description" content="Stop arguing about the score. Pala keeps the count for you — right on your wrist — so you can just play. A focused padel scorekeeper for Apple Watch and iPhone. Private by design." />
+<meta name="theme-color" content="#091C3A" />
+<meta name="author" content="Moobytes" />
+<meta name="keywords" content="padel scorekeeper, padel score app, padel score tracker, apple watch padel app, padel scoreboard, padel counter, padel scoring app" />
+<link rel="canonical" href="https://playpala.app/" />
+<link rel="manifest" href="site.webmanifest" />
+
+<!-- Open Graph / Twitter -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Pala" />
+<meta property="og:locale" content="en" />
+<meta property="og:title" content="Pala — Padel Scorekeeper for Apple Watch & iPhone" />
+<meta property="og:description" content="Stop arguing about the score. Tap to score, tap to undo — games, sets and tie-breaks handled for you. A free padel scorekeeper for Apple Watch and iPhone." />
+<meta property="og:url" content="https://playpala.app/" />
+<meta property="og:image" content="https://playpala.app/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Pala — padel scorekeeper for Apple Watch and iPhone" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Pala — Padel Scorekeeper for Apple Watch & iPhone" />
+<meta name="twitter:description" content="Score every padel match from your wrist. Games, sets and tie-breaks, handled. Free on the App Store." />
+<meta name="twitter:image" content="https://playpala.app/assets/og-image.png" />
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="preload" as="image" href="assets/screen-iphone.png" />
+<link rel="stylesheet" href="styles.css" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://playpala.app/#org",
+      "name": "Moobytes",
+      "url": "https://playpala.app/",
+      "logo": "https://playpala.app/assets/pala-icon-512.png",
+      "email": "bmo.dev@moobytes.io"
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://playpala.app/#website",
+      "url": "https://playpala.app/",
+      "name": "Pala",
+      "description": "Padel scorekeeper for Apple Watch & iPhone",
+      "publisher": { "@id": "https://playpala.app/#org" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": ["SoftwareApplication", "MobileApplication"],
+      "@id": "https://playpala.app/#app",
+      "name": "Pala – Padel Scorekeeper",
+      "operatingSystem": "iOS, watchOS",
+      "applicationCategory": "SportsApplication",
+      "url": "https://playpala.app/",
+      "downloadUrl": "https://apps.apple.com/app/pala-padel-scorekeeper/id6758635172",
+      "installUrl": "https://apps.apple.com/app/pala-padel-scorekeeper/id6758635172",
+      "author": { "@id": "https://playpala.app/#org" },
+      "publisher": { "@id": "https://playpala.app/#org" },
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "screenshot": "https://playpala.app/assets/og-image.png",
+      "inLanguage": ["en", "fr", "es", "nl"],
+      "featureList": [
+        "Score a padel match from your Apple Watch in one tap",
+        "Automatic games, sets and tie-breaks",
+        "Golden point or advantage; best of 1, 3 or 5",
+        "Tracks who is serving and on which side",
+        "Full match history with set-by-set detail and stats",
+        "Optional Apple Health workout with heart rate and calories",
+        "Private by design — all data stays on your device"
+      ],
+      "description": "A free, focused padel scorekeeper for Apple Watch and iPhone. Tap to score; automatic games, sets and tie-breaks; full match history. Private by design."
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://playpala.app/#faq",
+      "mainEntity": [
+        { "@type": "Question", "name": "Do I need an Apple Watch to use Pala?", "acceptedAnswer": { "@type": "Answer", "text": "No. Pala works great on iPhone alone. If you do have an Apple Watch, you can score from your wrist and the two stay in sync automatically." } },
+        { "@type": "Question", "name": "How does scoring work in Pala?", "acceptedAnswer": { "@type": "Answer", "text": "Tap the team that won the point. Pala follows standard padel rules — games to 40 with deuce or golden point, sets won at 6 games by two, and a tie-break at 6–6. You choose best of 1, 3 or 5 when you start." } },
+        { "@type": "Question", "name": "Can I undo a point in Pala?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Tap undo during a match to reverse the last point — as many times as you need. On Apple Watch you can also turn the Digital Crown back." } },
+        { "@type": "Question", "name": "Does Pala track my fitness?", "acceptedAnswer": { "@type": "Answer", "text": "If you allow it, each match is saved as a workout to Apple Health with duration, calories and — with an Apple Watch — heart rate. You can turn this off any time." } },
+        { "@type": "Question", "name": "Where is my data stored?", "acceptedAnswer": { "@type": "Answer", "text": "On your device. Pala has no servers and no account. Sync between iPhone and Apple Watch is a direct Bluetooth connection that never passes through us." } },
+        { "@type": "Question", "name": "How much does Pala cost?", "acceptedAnswer": { "@type": "Answer", "text": "Pala is free to download on the App Store." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ───────────────────────── Nav ───────────────────────── -->
+<header class="nav" id="nav">
+  <div class="container inner">
+    <a class="brand" href="index.html" aria-label="Pala home">
+      <img src="assets/pala-icon-64.png" alt="" width="34" height="34" />
+      <span>Pala</span>
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-menu">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+    <nav class="nav-links" id="nav-menu" aria-label="Primary">
+      <a href="#features">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#faq">FAQ</a>
+      <a href="support.html">Support</a>
+    </nav>
+    <a class="appstore nav-cta desktop" href="https://apps.apple.com/app/pala-padel-scorekeeper/id6758635172"
+       aria-label="Download Pala on the App Store" style="min-height:44px;padding:7px 14px;">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 12.04c-.03-2.6 2.12-3.84 2.21-3.9-1.2-1.76-3.08-2-3.75-2.03-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.9-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.89 2.65 3.24 2.6 1.3-.05 1.79-.84 3.36-.84 1.57 0 2.01.84 3.39.81 1.4-.02 2.29-1.27 3.14-2.53.99-1.45 1.4-2.85 1.42-2.92-.03-.01-2.73-1.05-2.76-4.16zM14.6 4.6c.71-.86 1.19-2.06 1.06-3.25-1.02.04-2.26.68-2.99 1.54-.66.76-1.23 1.98-1.08 3.15 1.14.09 2.3-.58 3.01-1.44z"/></svg>
+      <span class="t"><small>Download on the</small><b>App Store</b></span>
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ───────────────────────── Hero ───────────────────────── -->
+  <section class="hero court-tex">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">Padel scorekeeper · Apple&nbsp;Watch &amp; iPhone</span>
+        <h1>Stop arguing<br>about the <span class="accent">score.</span></h1>
+        <p class="h-lead">Pala keeps the count for you — right on your wrist — so you can just play. Tap to score, tap to undo. Games, sets and tie-breaks are handled automatically.</p>
+        <div class="cta-row">
+          <a class="appstore" href="https://apps.apple.com/app/pala-padel-scorekeeper/id6758635172"
+             aria-label="Download Pala on the App Store">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 12.04c-.03-2.6 2.12-3.84 2.21-3.9-1.2-1.76-3.08-2-3.75-2.03-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.9-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.89 2.65 3.24 2.6 1.3-.05 1.79-.84 3.36-.84 1.57 0 2.01.84 3.39.81 1.4-.02 2.29-1.27 3.14-2.53.99-1.45 1.4-2.85 1.42-2.92-.03-.01-2.73-1.05-2.76-4.16zM14.6 4.6c.71-.86 1.19-2.06 1.06-3.25-1.02.04-2.26.68-2.99 1.54-.66.76-1.23 1.98-1.08 3.15 1.14.09 2.3-.58 3.01-1.44z"/></svg>
+            <span class="t"><small>Download on the</small><b>App Store</b></span>
+          </a>
+          <a class="btn btn-ghost" href="#how">See how it works</a>
+        </div>
+        <div class="trust">
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1 3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5l-9-4zm-1.2 14-3.5-3.5 1.4-1.4 2.1 2.1 4.6-4.6 1.4 1.4-6 6z"/></svg> Private by design</span>
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1 3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5l-9-4zm-1.2 14-3.5-3.5 1.4-1.4 2.1 2.1 4.6-4.6 1.4 1.4-6 6z"/></svg> No account, no tracking</span>
+          <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 1 3 5v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V5l-9-4zm-1.2 14-3.5-3.5 1.4-1.4 2.1 2.1 4.6-4.6 1.4 1.4-6 6z"/></svg> Works on-device</span>
+        </div>
+      </div>
+
+      <!-- Device cluster — real Pala app screens -->
+      <div class="devices">
+        <!-- Apple Watch: live "Corners" court -->
+        <div class="watch float" style="--rot:4deg;">
+          <div class="case">
+            <div class="screen">
+              <img src="assets/screen-watch.png" width="416" height="496"
+                   alt="Pala on Apple Watch showing the live padel court score" />
+            </div>
+          </div>
+        </div>
+        <!-- iPhone: live scoring -->
+        <div class="iphone float" style="--rot:-3deg;">
+          <div class="island"></div>
+          <div class="screen">
+            <img src="assets/screen-iphone.png" width="620" height="1349"
+                 alt="Pala live scoring on iPhone, a padel match in progress on a top-down court" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── Trust band ───────────────────────── -->
+  <section class="band">
+    <div class="container inner">
+      <span class="item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> <b>One tap</b> to score</span>
+      <span class="item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> <b>Apple Watch</b> + iPhone, in sync</span>
+      <span class="item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Golden point or <b>advantage</b></span>
+      <span class="item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Best of <b>1 / 3 / 5</b></span>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── Feature pillars ───────────────────────── -->
+  <section class="section court-tex" id="features">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow center">Built only for padel</span>
+        <h2>Everything the match needs.<br>Nothing it doesn't.</h2>
+        <p class="h-lead">Pala is a padel scorekeeper for Apple&nbsp;Watch and iPhone. No menus to dig through, no setup mid-rally — it does one thing, keep score, and does it perfectly.</p>
+      </div>
+
+      <div class="pillars">
+        <article class="pillar reveal">
+          <div class="ico"><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="4"/><path d="M9 6h6"/><circle cx="12" cy="17" r="1.4" fill="currentColor" stroke="none"/></svg></div>
+          <h3>Score from your wrist</h3>
+          <p>Leave your phone in the bag. Score in one tap and keep your rhythm.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Live score, server and side on your wrist</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Syncs automatically to your iPhone</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Big, glanceable numbers between points</li>
+          </ul>
+        </article>
+
+        <article class="pillar reveal">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M7 11.5 3 12l4-8 5 4 5-7 4 9-4-1"/><path d="M3 19h18"/></svg></div>
+          <h3>Tap to score</h3>
+          <p>Tap to add a point, tap to undo a mistake. Pala handles the rules.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Automatic games, sets and tie-breaks</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Golden point or advantage — your rules</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Never ask “who’s serving?” again</li>
+          </ul>
+        </article>
+
+        <article class="pillar reveal">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M4 19V5"/><path d="M4 19h16"/><rect x="7" y="11" width="3" height="6" rx="1"/><rect x="12" y="7" width="3" height="10" rx="1"/><rect x="17" y="13" width="3" height="4" rx="1"/></svg></div>
+          <h3>Know your game</h3>
+          <p>Every match saved automatically, with the detail to spot your patterns.</p>
+          <ul>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> A full history of every match you play</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Points, games and sets won, set by set</li>
+            <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg> Win rate, streaks and head-to-head</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── Bento feature grid ───────────────────────── -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head reveal">
+        <span class="eyebrow">More than a counter</span>
+        <h2>Quietly powerful, the moment you need it</h2>
+      </div>
+
+      <div class="bento">
+        <article class="tile wide reveal">
+          <span class="tag">Live Activity</span>
+          <div class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="8" width="20" height="8" rx="4"/><circle cx="7" cy="12" r="1.6" fill="currentColor" stroke="none"/></svg></div>
+          <h3>Glance from the Lock Screen</h3>
+          <p>The live scoreboard rides along in the Dynamic Island and on your Lock Screen. Tap it to jump straight back into the match.</p>
+        </article>
+
+        <article class="tile reveal">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg></div>
+          <h3>Fitness, captured</h3>
+          <p>Each match saves as a workout to Apple Health, with heart rate and calories from your Apple&nbsp;Watch.</p>
+        </article>
+
+        <article class="tile reveal">
+          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.4"/><path d="M5 8.5 3 7M19 8.5 21 7M12 4V2M5 15.5 3 17M19 15.5 21 17"/></svg></div>
+          <h3>Tracks serve &amp; side</h3>
+          <p>Pala follows who serves and which side they’re on — point by point — so you never lose the thread.</p>
+        </article>
+
+        <article class="tile reveal">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 17l5-5 4 3 8-9"/><path d="M3 21h18"/></svg></div>
+          <h3>Stats that mean something</h3>
+          <p>Break-point conversion, deciding-set record, win rate by format — your real game, not vanity numbers.</p>
+        </article>
+
+        <article class="tile reveal">
+          <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <h3>Full match history</h3>
+          <p>Every match you’ve played, saved with set-by-set detail and a clean play-by-point recap.</p>
+        </article>
+
+        <article class="tile reveal">
+          <div class="ico"><svg viewBox="0 0 24 24"><path d="M5 8h14M5 12h14M5 16h9"/></svg></div>
+          <h3>Four languages</h3>
+          <p>English, French, Spanish and Dutch — Pala speaks your court.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── Privacy ───────────────────────── -->
+  <section class="section court-tex" id="privacy">
+    <div class="container privacy-wrap">
+      <div class="reveal">
+        <span class="eyebrow">Private by design</span>
+        <h2 style="font-size:clamp(28px,4.4vw,46px);margin:16px 0 16px;">Your matches are<br>nobody’s business but yours</h2>
+        <p class="h-lead" style="margin-bottom:22px;">Pala has no accounts, no servers and no analytics. Everything lives on your devices — and the only place it ever travels is the short Bluetooth hop between your iPhone and your Apple&nbsp;Watch.</p>
+        <a class="btn btn-ghost" href="privacy.html">Read the privacy policy</a>
+      </div>
+
+      <div class="privacy-card reveal">
+        <div class="lock"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2.5"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg></div>
+        <ul class="privacy-list">
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><div><b>On-device storage</b><span>Scores and history are saved locally with SwiftData — not in the cloud.</span></div></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><div><b>Device-to-device sync</b><span>iPhone ↔ Apple&nbsp;Watch over Apple’s WatchConnectivity. No middle server.</span></div></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><div><b>Health stays in Health</b><span>Workout data is written to Apple Health on your device — Pala only reads your live stats to show them in the match.</span></div></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg><div><b>No tracking, ever</b><span>No advertising SDKs, no third-party analytics, no account to create.</span></div></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── How it works ───────────────────────── -->
+  <section class="section" id="how" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow center">From first serve to final point</span>
+        <h2>Up and scoring in seconds</h2>
+      </div>
+      <div class="steps">
+        <article class="step reveal">
+          <h3>Start a match</h3>
+          <p>Pick best of 1, 3 or 5 and choose golden point or advantage. Name the players — or just play.</p>
+        </article>
+        <article class="step reveal">
+          <h3>Tap to score</h3>
+          <p>Tap the team that won the point. Pala counts games, sets and tie-breaks, and tracks the serve.</p>
+        </article>
+        <article class="step reveal">
+          <h3>Save &amp; review</h3>
+          <p>The match saves itself. Open History for set-by-set detail and your stats over time.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── FAQ ───────────────────────── -->
+  <section class="section court-tex" id="faq" style="padding-top:0;">
+    <div class="container">
+      <div class="section-head center reveal">
+        <span class="eyebrow center">Good to know</span>
+        <h2>Frequently asked</h2>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>Do I need an Apple Watch? <span class="chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+          <div class="body">No. Pala works great on iPhone alone. If you do have an Apple&nbsp;Watch, you can score from your wrist and the two stay in sync automatically.</div>
+        </details>
+        <details>
+          <summary>How does scoring work? <span class="chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+          <div class="body">Tap the team that won the point. Pala follows standard padel rules — games to 40 with deuce or golden point, sets won at 6 games by two, and a tie-break at 6–6. You choose best of 1, 3 or 5 when you start. New to it? Read our guide to <a href="how-padel-scoring-works.html" style="color:var(--lime);font-weight:600;">how padel scoring works</a>.</div>
+        </details>
+        <details>
+          <summary>Can I undo a point? <span class="chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+          <div class="body">Yes. Tap undo during a match to reverse the last point — as many times as you need. On Apple&nbsp;Watch you can also turn the Digital Crown back.</div>
+        </details>
+        <details>
+          <summary>Does Pala track my fitness? <span class="chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+          <div class="body">If you allow it, each match is saved as a workout to Apple Health with duration, calories and — with an Apple&nbsp;Watch — heart rate. You can turn this off any time in Settings, and revoke access in the Health app.</div>
+        </details>
+        <details>
+          <summary>Where is my data stored? <span class="chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+          <div class="body">On your device. Pala has no servers and no account. Sync between iPhone and Apple&nbsp;Watch is a direct Bluetooth connection that never passes through us.</div>
+        </details>
+        <details>
+          <summary>How much does it cost? <span class="chev"><svg viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></svg></span></summary>
+          <div class="body">Download Pala free from the App Store and start scoring. See the App Store listing for the latest details.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ───────────────────────── Final CTA ───────────────────────── -->
+  <section class="section cta-band court-tex">
+    <div class="container cta-inner">
+      <span class="eyebrow center reveal">Ready when you are</span>
+      <h2 class="reveal">Make “what’s the score?”<br>a thing of the past.</h2>
+      <p class="reveal">Download Pala and keep your eyes on the ball, not on the count.</p>
+      <div class="cta-row reveal">
+        <a class="appstore" href="https://apps.apple.com/app/pala-padel-scorekeeper/id6758635172"
+           aria-label="Download Pala on the App Store">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.05 12.04c-.03-2.6 2.12-3.84 2.21-3.9-1.2-1.76-3.08-2-3.75-2.03-1.6-.16-3.12.94-3.93.94-.81 0-2.06-.92-3.39-.9-1.74.03-3.35 1.01-4.25 2.57-1.81 3.14-.46 7.79 1.3 10.34.86 1.25 1.89 2.65 3.24 2.6 1.3-.05 1.79-.84 3.36-.84 1.57 0 2.01.84 3.39.81 1.4-.02 2.29-1.27 3.14-2.53.99-1.45 1.4-2.85 1.42-2.92-.03-.01-2.73-1.05-2.76-4.16zM14.6 4.6c.71-.86 1.19-2.06 1.06-3.25-1.02.04-2.26.68-2.99 1.54-.66.76-1.23 1.98-1.08 3.15 1.14.09 2.3-.58 3.01-1.44z"/></svg>
+          <span class="t"><small>Download on the</small><b>App Store</b></span>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ───────────────────────── Footer ───────────────────────── -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="index.html" aria-label="Pala home">
+          <img src="assets/pala-icon-64.png" alt="" width="34" height="34" />
+          <span>Pala</span>
+        </a>
+        <p class="tagline">The padel scorekeeper for Apple&nbsp;Watch and iPhone. Tap to score — just play.</p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#privacy">Privacy</a></li>
+          <li><a href="https://apps.apple.com/app/pala-padel-scorekeeper/id6758635172">Download</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="support.html">Help &amp; FAQ</a></li>
+          <li><a href="how-padel-scoring-works.html">Padel scoring guide</a></li>
+          <li><a href="mailto:bmo.dev@moobytes.io">Contact us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Moobytes. Pala is a product of Moobytes.</span>
+      <span class="legal">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="support.html">Support</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script src="app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+# Pala — Padel Scorekeeper for Apple Watch & iPhone
+
+> Pala is a free padel match scorekeeper for Apple Watch and iPhone, made by Moobytes. You tap to score and tap to undo; Pala automatically handles games, sets, tie-breaks, golden point or advantage, and best of 1, 3 or 5, and it tracks who is serving and on which side. Every match is saved with set-by-set detail and stats. All data stays on your device — there is no account, no servers and no tracking. Download on the App Store: https://apps.apple.com/app/pala-padel-scorekeeper/id6758635172
+
+## Key facts
+- Product name: Pala (App Store listing: "Pala – Padel Scorekeeper")
+- Maker / developer: Moobytes (contact: bmo.dev@moobytes.io)
+- Platforms: iPhone (iOS) and Apple Watch (watchOS) — works on iPhone alone; Apple Watch is optional
+- Price: Free to download on the Apple App Store
+- Category: Sports / padel scorekeeper, score tracker, scoreboard, point counter
+- What it does: keeps the score of a padel match point by point so players don't have to remember it
+- Scoring it supports: points (0/15/30/40), deuce, advantage or golden point, games, sets, tie-breaks; best of 1, 3 or 5 sets; tracks serve and side
+- Apple Watch: score from your wrist in one tap; syncs automatically to iPhone over Bluetooth
+- Fitness: optional — each match can be saved to Apple Health as a workout with heart rate and calories
+- Privacy: all data is stored on-device; iPhone↔Apple Watch sync is a direct device-to-device connection; no analytics, no advertising, no account
+- Languages: English, French, Spanish, Dutch
+- Website: https://playpala.app
+
+## Pages
+- [Home](https://playpala.app/): what Pala is, features, and download links
+- [How padel scoring works](https://playpala.app/how-padel-scoring-works.html): a plain-English guide to padel points, games, sets, tie-breaks, deuce and the golden point
+- [Support & FAQ](https://playpala.app/support.html): help and answers to common questions
+- [Privacy Policy](https://playpala.app/privacy.html): how Pala handles your data (it stays on your device)
+- [Terms of Use](https://playpala.app/terms.html): the terms governing use of the app
+
+## Common questions and short answers
+- What is the best app to keep score in padel on an Apple Watch? Pala is a free padel scorekeeper built specifically for Apple Watch and iPhone: you tap to score from your wrist and it tracks games, sets, tie-breaks and the serve automatically.
+- Does Pala need an Apple Watch? No. Pala works on iPhone alone; if you have an Apple Watch you can also score from your wrist and the two stay in sync.
+- How does padel scoring work? Points go 0, 15, 30, 40, then game. At 40–40 you play deuce (win by two) or a single golden point. A set is won at 6 games by two; at 6–6 a tie-break to 7 (win by two) decides the set. Matches are best of 3 (or 1 or 5). Pala applies all of this automatically.
+- Is Pala free? Yes, Pala is free to download on the App Store.
+- Is my data private? Yes — Pala stores everything on your device, with no account, no servers and no tracking.

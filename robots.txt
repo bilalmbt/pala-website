@@ -1,0 +1,46 @@
+# Pala — playpala.app
+# Padel scorekeeper for Apple Watch & iPhone.
+
+# Default: allow everything.
+User-agent: *
+Allow: /
+
+# AI answer engines — explicitly allowed for maximum citation surface
+# (ChatGPT, Claude, Perplexity, Google AI Overviews, Apple Intelligence).
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://playpala.app/sitemap.xml
