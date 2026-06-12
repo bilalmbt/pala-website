@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Match invite — Pala</title>
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#091C3A" />
+<link rel="canonical" href="https://playpala.app/m.html" />
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+<link rel="stylesheet" href="styles.css" />
+<style>
+  .inv { min-height: 72vh; display: grid; place-items: center; text-align: center; }
+  .inv .card { width: min(92vw, 460px); background: var(--surface, rgba(255,255,255,.04));
+    border: 1px solid var(--hairline, rgba(255,255,255,.10)); border-radius: 20px; padding: 30px 26px;
+    box-shadow: 0 24px 60px rgba(0,0,0,.35); }
+  .inv .eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: 12px; font-weight: 700;
+    color: var(--lime-soft, #c8f560); margin: 0 0 8px; }
+  .inv h1 { font-size: clamp(24px, 4vw, 34px); margin: 0 0 6px; line-height: 1.12; }
+  .inv .when { color: var(--on-navy-muted); font-size: 16px; margin: 2px 0; }
+  .inv .meta-row { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; margin: 16px 0 6px; }
+  .inv .chip { font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 999px;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.10); color: var(--on-navy, #eaf0ff); }
+  .inv .spots { color: var(--lime-soft, #c8f560); font-weight: 700; }
+  .inv .note { color: var(--on-navy-muted); font-size: 14px; max-width: 360px; margin: 18px auto 0; }
+  .inv .cta-row { justify-content: center; margin-top: 22px; }
+  .inv .muted { color: var(--on-navy-muted); }
+  .inv[hidden], [hidden] { display: none !important; }
+</style>
+
+<!-- Microsoft Clarity -->
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "x5sfnk51pd");
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="container inner">
+    <a class="brand" href="index.html" aria-label="Pala home">
+      <img src="assets/pala-icon-64.png" alt="" width="34" height="34" />
+      <span>Pala</span>
+    </a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html#features">Features</a>
+      <a href="index.html#how">How it works</a>
+      <a href="support.html">Support</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" class="hero court-tex">
+  <div class="container inv">
+    <!-- Loading -->
+    <div id="state-loading">
+      <p class="muted">Loading your match invite…</p>
+    </div>
+
+    <!-- Valid invite -->
+    <div id="state-invite" class="card" hidden>
+      <p class="eyebrow">You're invited to play</p>
+      <h1 id="ev-title">Padel match</h1>
+      <p class="when" id="ev-when"></p>
+      <p class="when" id="ev-where"></p>
+      <div class="meta-row">
+        <span class="chip" id="ev-host"></span>
+        <span class="chip" id="ev-spots"></span>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-lime" id="cta-app" href="https://apps.apple.com/app/id6758635172">Get Pala to RSVP</a>
+      </div>
+      <p class="note">Open this link on your iPhone with <strong>Pala</strong> installed to RSVP instantly. New here? Install Pala, sign in, and the invite opens automatically.</p>
+    </div>
+
+    <!-- Invalid / expired -->
+    <div id="state-invalid" class="card" hidden>
+      <p class="eyebrow">Invite unavailable</p>
+      <h1>This invite has expired</h1>
+      <p class="note">This match link is invalid, has already been used, or the match is no longer open. Ask whoever shared it for a fresh invite.</p>
+      <div class="cta-row">
+        <a class="btn btn-lime" href="https://apps.apple.com/app/id6758635172">Get Pala</a>
+        <a class="btn btn-ghost" href="index.html">Visit playpala.app</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-bottom" style="margin-top:0;border-top:none;padding-top:0;">
+      <span>© <span data-year>2026</span> Moobytes.</span>
+      <span class="legal">
+        <a href="index.html">Home</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="support.html">Support</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // --- Supabase (anon, client-safe publishable key) -------------------------
+  // NOTE: pointed at the DEV project for now (the only environment that exists).
+  // Switch to the prod project URL + publishable key when prod is provisioned.
+  var SUPABASE_URL  = "https://hlmkdpodiuhppyfpsdgm.supabase.co";
+  var SUPABASE_ANON = "sb_publishable_XBagGhrf52F3_H8AqL6zjg_GBO5keXR";
+
+  function show(id) {
+    ["state-loading", "state-invite", "state-invalid"].forEach(function (s) {
+      document.getElementById(s).hidden = (s !== id);
+    });
+  }
+  function text(id, v) { document.getElementById(id).textContent = v; }
+
+  // Token comes from ?t=<token> (404.html redirects /m/<token> here), or the path.
+  function getToken() {
+    var q = new URLSearchParams(location.search).get("t");
+    if (q) return q.trim();
+    var p = location.pathname;
+    if (p.indexOf("/m/") === 0) return decodeURIComponent(p.slice(3).replace(/\/+$/, "")).trim();
+    return "";
+  }
+
+  function fmtWhen(iso, tz) {
+    try {
+      return new Intl.DateTimeFormat("en", {
+        weekday: "long", month: "long", day: "numeric",
+        hour: "numeric", minute: "2-digit", timeZone: tz || undefined
+      }).format(new Date(iso));
+    } catch (e) { return ""; }
+  }
+
+  async function peek(token) {
+    var r = await fetch(SUPABASE_URL + "/rest/v1/rpc/peek_invite", {
+      method: "POST",
+      headers: {
+        "apikey": SUPABASE_ANON,
+        "Authorization": "Bearer " + SUPABASE_ANON,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ p_token: token })
+    });
+    if (!r.ok) return null;                 // not_found / expired / redeemed -> invalid
+    var data = await r.json();
+    return (data && data.event) ? data : null;
+  }
+
+  function render(payload) {
+    var ev = payload.event || {};
+    if (ev.title) text("ev-title", ev.title);
+    var when = fmtWhen(ev.starts_at, ev.timezone);
+    text("ev-when", when || "");
+    text("ev-where", ev.venue_city ? ("📍 " + ev.venue_city) : "");
+    text("ev-host", ev.host_display_name ? ("Hosted by " + ev.host_display_name) : "Organized match");
+
+    var spots = (typeof ev.spots_left === "number") ? ev.spots_left : null;
+    var spotsEl = document.getElementById("ev-spots");
+    if (spots !== null && spots > 0) {
+      spotsEl.textContent = spots + (spots === 1 ? " spot left" : " spots left");
+      spotsEl.classList.add("spots");
+    } else if (payload.redeemable) {
+      spotsEl.textContent = "Match full — join the waitlist";
+    } else {
+      spotsEl.textContent = "Match full";
+    }
+    show("state-invite");
+  }
+
+  (async function () {
+    var token = getToken();
+    if (!token) { show("state-invalid"); return; }
+    try {
+      var payload = await peek(token);
+      if (payload) render(payload); else show("state-invalid");
+    } catch (e) {
+      show("state-invalid");
+    }
+  })();
+</script>
+<script src="app.js" defer></script>
+</body>
+</html>

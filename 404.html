@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+  // Universal-Link RSVP fallback: a device WITHOUT the app opens
+  // https://playpala.app/m/<token>, which 404s on this static host. Route it to
+  // the invite preview page (devices WITH Pala never reach here — the AASA at
+  // /.well-known/apple-app-site-association claims /m/* so the app intercepts).
+  (function () {
+    var p = location.pathname;
+    if (p.indexOf("/m/") === 0 && p.length > 3) {
+      location.replace("/m.html?t=" + encodeURIComponent(p.slice(3).replace(/\/+$/, "")));
+    }
+  })();
+</script>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Page not found — Pala</title>

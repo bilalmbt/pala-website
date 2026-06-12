@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["GX922H5C5A.io.moobytes.Padel-Score"],
+        "components": [
+          {
+            "/": "/m/*",
+            "comment": "Universal-Link RSVP invites to organized matches (https://playpala.app/m/<token>)"
+          }
+        ]
+      }
+    ]
+  }
+}
